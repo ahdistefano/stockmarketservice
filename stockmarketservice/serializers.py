@@ -26,7 +26,7 @@ class SignupSerializer(serializers.HyperlinkedModelSerializer):
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('email', 'username', 'password', 'first_name', 'last_name')
+        fields = ('first_name', 'last_name')
 
 class DailyPricesSerializer(serializers.HyperlinkedModelSerializer):
     openPrice       = serializers.CharField(max_length=255)
