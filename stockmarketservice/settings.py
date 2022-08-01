@@ -25,7 +25,7 @@ SECRET_KEY = '6ae7135c-ef23-4ec4-ac07-6f5fbb680a43'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'ahd-stockmarketservice.herokuapp.com']
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
