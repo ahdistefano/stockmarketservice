@@ -6,10 +6,10 @@ from rest_framework.validators import UniqueValidator
 
 class SignupSerializer(serializers.HyperlinkedModelSerializer):
 
-    first_name  = serializers.CharField(required=True, label="Name", validators=[MinLengthValidator(10, 'The field must contain at least 10 characters')])
-    last_name   = serializers.CharField(required=True, label="Last Name", validators=[MinLengthValidator(10, 'The field must contain at least 10 characters')])
+    first_name  = serializers.CharField(required=True, label="Name", validators=[MinLengthValidator(3, 'The field must contain at least 3 characters')])
+    last_name   = serializers.CharField(required=True, label="Last Name", validators=[MinLengthValidator(3, 'The field must contain at least 3 characters')])
     email       = serializers.EmailField(required=True, style={'input_type': 'email'}, validators=[UniqueValidator(queryset=User.objects.all())])
-    password    = serializers.CharField(write_only=True, required=True, style={'input_type': 'password', 'placeholder': 'Password'}, validators=[MinLengthValidator(10, 'The field must contain at least 10 characters')])
+    password    = serializers.CharField(write_only=True, required=True, style={'input_type': 'password', 'placeholder': 'Password'}, validators=[MinLengthValidator(8, 'The field must contain at least 8 characters')])
 
     class Meta:
         model = User
