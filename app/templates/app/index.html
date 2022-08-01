@@ -1,0 +1,22 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Stock Market Service API endpoint</h1>
+    <br />
+    <p>Enter a valid NASDAQ Stock Exchange symbol and query against Alpha Vantage's daily timeseries API.</p>
+    <p>You can get the complete list of symbols <a href="https://eoddata.com/stocklist/NASDAQ.htm" target="_blank">here</a>. Some examples are "IBM", "TSLA", "MSFT", etc.</p>
+    <form action="{% url 'stockmarket' %}" method="get">
+        <input type="text" name="symbol" value="IBM">
+        <br />
+        <input type="radio" id="Compact" name="outputsize" value="compact" checked="checked" />
+        <label for="Compact">Compact</label>
+        <input type="radio" id="Full" name="outputsize" value="full" />
+        <label for="Full">Full</label>
+        <br />
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+
+{% endblock %}
